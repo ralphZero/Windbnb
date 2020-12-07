@@ -1,12 +1,15 @@
 import styles from './NavButton.module.css'
 
 const NavButton = (props) => {
+
+    //const guestValue = 0;
+
     return (
         <div className={styles.container}>
-            <input className={styles.input+' '+styles.inputCity} name='city' type="text" value='Helsinki, Finland'/>
-            <input className='input input-guest' name='guest' type="text" placeholder='Add guest'/>
-            <button className='btn-search'>
-                <span className='material-icons'>search</span>
+            <span className={styles.input+' '+styles.inputCity}>Helsinki, Finland</span>
+            <span className={styles.input+' '+styles.inputGuest} style={{color : 0xFFBDBDBD}}>Add guest</span>
+            <button className={styles.btnSearch}>
+                <span className={'material-icons '+styles.icon}>search</span>
             </button>
         </div>
     )
