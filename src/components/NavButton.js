@@ -4,7 +4,7 @@ const NavButton = ({onSearch, onOpen}) => {
 
     function handleModalOpen(e){
         const type = e.currentTarget.dataset.key;
-        console.log(type);
+        onOpen(type);
     }
 
     return (
