@@ -1,0 +1,12 @@
+.input{
+    padding: 10px;
+    border-radius: 0;
+}
+.inputCity{
+
+}
+
+.container{
+    display: inline-flex;
+    flex-direction: row;
+}
