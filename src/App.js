@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Grid from './components/Grid';
 import Navbar from './components/Navbar';
+import StaysBar from './components/StaysBar';
 
 class App extends Component {
 
@@ -7,6 +9,8 @@ class App extends Component {
     return (
       <div>
         <Navbar />
+        <StaysBar />
+        <Grid />
       </div>
     );
   }

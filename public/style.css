@@ -17,3 +17,24 @@ html, body{
 body{
     padding: 5vh 8%;
 }
+
+.staybar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5vh 0;
+}
+
+.staybar-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--black);
+}
+
+.staybar-count{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray1);
+}
