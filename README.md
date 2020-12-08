@@ -84,6 +84,7 @@ $ npm start
 - [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
 - [Node.js](https://nodejs.org/)
 - [Marked - a markdown parser](https://github.com/chjj/marked)
+- [Modal](https://www.w3schools.com/howto/howto_css_modals.asp)
 
 ## Contact
 
