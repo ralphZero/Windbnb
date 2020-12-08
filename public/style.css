@@ -18,6 +18,12 @@ body{
     padding: 5vh 8%;
 }
 
+@media screen and (min-width: 1440px){
+    body {
+        padding: 5vh 12%;
+    }
+}
+
 .staybar{
     display: flex;
     justify-content: space-between;
