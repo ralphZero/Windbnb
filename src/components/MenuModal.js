@@ -10,7 +10,8 @@ class MenuModal extends Component {
         adultCount : 0,
         childrenCount : 0,
         guestCount : 0,
-        location : ''
+        location : '',
+        locationId : null
     }
 
     onActiveChange = (e) => {
@@ -38,7 +39,13 @@ class MenuModal extends Component {
             }))
             console.log('total '+ this.state.guestCount);
         }
-        
+    }
+
+    onLocationDataChanged = (id, city) => {
+        this.setState({
+            location : city,
+            locationId : id
+        })
     }
 
     render() {
@@ -46,10 +53,10 @@ class MenuModal extends Component {
             <div className={styles.modal}>
                 <div className={styles.modalContent}>
                     <div className={styles.modalBlockOne}>
-                        <ModalButtonBar guestCount={this.state.guestCount} active={this.state.active} onClick={this.onActiveChange}/>
+                        <ModalButtonBar location={this.state.location} guestCount={this.state.guestCount} active={this.state.active} onClick={this.onActiveChange}/>
                         {this.state.active === 1 ? (
                             <div className={styles.modalList}>
-                                <Locations />
+                                <Locations locationId={this.state.locationId} onLocationChanged={this.onLocationDataChanged}/>
                                 <div></div>
                             </div>
                             

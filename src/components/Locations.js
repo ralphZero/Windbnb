@@ -1,19 +1,19 @@
 import styles from './MenuModal.module.css'
 
-const Locations = (props) => {
+const Locations = ({locationId, onLocationChanged}) => {
 
     const list = [
-        'Helsinki, Finland',
-        'Turku, Finland',
-        'Oulu, Finland',
-        'Vaasa, Finland'
+        {id : 0, city : 'Helsinki, Finland'},
+        {id : 1, city : 'Turku, Finland'},
+        {id : 2, city : 'Oulu, Finland'},
+        {id : 3, city : 'Vaasa, Finland'}
     ]
 
     const locations = list.map(location => {
         return (
-            <div className={styles.location} key={Math.random()}>
+            <div className={styles.location} style={locationId != null && locationId === location.id ? ({color : '#EB5757'}) : null} key={location.id} onClick={(e) => {onLocationChanged(location.id, location.city)}}>
                 <span className='material-icons'>place</span>
-                <span>{location}</span>
+                <span>{location.city}</span>
             </div>
         )
     })
