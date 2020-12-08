@@ -9,7 +9,8 @@ class MenuModal extends Component {
         active : 1,
         adultCount : 0,
         childrenCount : 0,
-        guestCount : 0
+        guestCount : 0,
+        location : ''
     }
 
     onActiveChange = (e) => {
