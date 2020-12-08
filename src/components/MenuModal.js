@@ -6,12 +6,26 @@ import ModalButtonBar from './ModalButtonbar';
 
 class MenuModal extends Component {
     state = {
+        isShowing : false,
         active : 1,
         adultCount : 0,
         childrenCount : 0,
         guestCount : 0,
         location : '',
         locationId : null
+    }
+
+    componentDidUpdate(oldProps){
+        if(this.props.isOpen !== oldProps.isOpen){
+            this.setState((state, props) => ({
+                isShowing : props.isOpen
+            }))
+        }
+        if(this.props.active !== oldProps.active){
+            this.setState({
+                active : this.props.active
+            })
+        }
     }
 
     onActiveChange = (e) => {
@@ -30,6 +44,7 @@ class MenuModal extends Component {
                 guestCount : state.adultCount + state.childrenCount
             }))
             console.log('total '+ this.state.guestCount);
+            this.props.onGuestData(this.state.guestCount)
         }else{
             this.setState({
                 childrenCount : data
@@ -38,6 +53,7 @@ class MenuModal extends Component {
                 guestCount : state.adultCount + state.childrenCount
             }))
             console.log('total '+ this.state.guestCount);
+            this.props.onGuestData(this.state.guestCount)
         }
     }
 
@@ -46,11 +62,28 @@ class MenuModal extends Component {
             location : city,
             locationId : id
         })
+        this.props.onLocation(city)
+    }
+
+    onModalClosing = (e) => {
+        const modal = document.querySelector('#modalContent')
+        if(e.target === modal){
+            e.target.firstChild.classList.toggle(styles.modalOut)
+            setTimeout(() => {
+                e.target.firstChild.classList.toggle(styles.modalOut)
+            }, 500);
+            setTimeout(() => {
+                this.setState((state, props) => ({
+                    isShowing : state.isShowing ? (false) : (true)
+                }))
+                this.props.onModalStateChanged(this.state.isShowing);
+            }, 450);
+        }
     }
 
     render() {
         return (
-            <div className={styles.modal}>
+            <div id='modalContent' onClick={this.onModalClosing} className={styles.modal} style={this.state.isShowing ? ({display : "block"}) : ({display : "none"})}>
                 <div className={styles.modalContent}>
                     <div className={styles.modalBlockOne}>
                         <ModalButtonBar location={this.state.location} guestCount={this.state.guestCount} active={this.state.active} onClick={this.onActiveChange}/>
