@@ -1,7 +1,8 @@
 import styles from './MenuModal.module.css'
 
-const ModalButtonBar = ({active, onClick}) => {
-
+const ModalButtonBar = ({guestCount, active, onClick}) => {
+    const guest = guestCount === 0 ? ('Add guest') : (guestCount === 1 ? (guestCount+' guest') : (guestCount+' guests'));
+    const guestColor = guestCount === 0 ? ({color : '#bdbdbd'}) : null
     return (
         active === 1 ? (
             <div className={styles.modalButtons}>
@@ -11,7 +12,7 @@ const ModalButtonBar = ({active, onClick}) => {
                 </button>
                 <button data-key='2' onClick={(e)=>onClick(e)} className={styles.button+' '+styles.buttonGuest}>
                     <div className={styles.buttonTitle}>GUEST</div>
-                    <div className={styles.buttonSubtitle}>Helsinki, Finland</div>
+                    <div className={styles.buttonSubtitle} style={guestColor}>{guest}</div>
                 </button>
             </div>
         ) : (
@@ -22,7 +23,7 @@ const ModalButtonBar = ({active, onClick}) => {
                 </button>
                 <button  data-key='2' onClick={(e)=>onClick(e)} className={styles.button+' '+styles.buttonGuest+' '+styles.active}>
                     <div className={styles.buttonTitle}>GUEST</div>
-                    <div className={styles.buttonSubtitle}>Helsinki, Finland</div>
+                    <div className={styles.buttonSubtitle} style={guestColor}>{guest}</div>
                 </button>
             </div>
         )

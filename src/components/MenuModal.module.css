@@ -89,3 +89,42 @@
     grid-template-columns: repeat(2, 1fr);
     margin-top: 5vh;
 }
+/*location*/
+.location{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+    color: #4f4f4f;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+}
+
+.location:hover{
+    transition: color .3s ease;
+    color: #EB5757;
+    cursor: pointer;
+}
+/*Guest*/
+.guests{
+    font-family: 'Mulish', sans-serif;
+}
+.guestsTitle{
+    font-weight: 800;
+}
+.counterContainer{
+    margin-top: 10px;
+}
+.counter{
+    padding: 5px 15px;
+}
+.btnCounter{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
