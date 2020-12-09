@@ -13,7 +13,6 @@ class Navbar extends Component {
     }
 
     handleModalOpen = (type) => {
-        console.log('You have clicked on '+type);
         type === 'city' ? (
             this.setState({
                 modalIsShowing : true,

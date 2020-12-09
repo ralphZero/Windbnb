@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    padding: 5vh 0;
 }
 
 @media screen and (max-width : 940px){
@@ -70,7 +71,7 @@
 .stay_info_rating{
     display: flex;
     align-items: center;
-    font-size: 0.55rem;
+    font-size: 0.77rem;
     font-weight: 500;
     color: var(--gray1);
     margin-left: auto;

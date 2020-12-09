@@ -28,7 +28,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5vh 0;
+    margin: 5vh 0 0 0;
 }
 
 .staybar-title{
@@ -36,6 +36,12 @@ body{
     font-weight: 700;
     font-size: 24px;
     color: var(--black);
+}
+
+@media screen and (max-width:625px){
+    .staybar-title{
+        font-size: 20px;
+    }
 }
 
 .staybar-count{
