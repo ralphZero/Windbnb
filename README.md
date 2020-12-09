@@ -56,6 +56,13 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
+- [x] User story: I can see a list of properties
+- [x] User story: I can see property card with a name, rating, apartment type, and super host
+- [x] User story: I can open filter drawer
+- [x] User story: I can filter properties by location and number of guests
+- [x] User story: I can see the number of filtered items
+- [x] User story: I can see pages following given designs
+
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/3JFYedSOZqAxYuOCNmYD) was to build an application to complete the given user stories.
 
 ## How To Use
