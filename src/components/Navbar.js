@@ -33,28 +33,33 @@ class Navbar extends Component {
     }
 
     onGuestDataChanged = (count) => {
+        //console.log('count is '+count);
         this.setState((state, props) => ({
-            guests : state.guests + count
+            guests : count
         }))
     }
 
     onModalStateChanged = (value) => {
-        console.log('new value' + value);
+        //console.log('new value' + value);
         this.setState((state, props) => ({
             modalIsShowing : value
         }))
+    }
+    onSearch = (location, guest) => {
+        this.props.onQuerySearch(location, guest)
     }
 
     render(){
         return (
             <nav className={styles.navbar}>
-                <img src={Logo} alt="Windbnb"/>
-                <NavButton location={this.state.city} guestCount={this.state.guests} onOpen={this.handleModalOpen} />
+                <a href={'/'}><img src={Logo} alt="Windbnb"/></a>
+                <NavButton location={this.state.city} guestCount={this.state.guests} onOpen={this.handleModalOpen} onSearch={this.onSearch} />
                 <MenuModal isOpen={this.state.modalIsShowing} 
                     active={this.state.activeTab} 
                     onLocation={this.onLocationChanged} 
                     onGuestData={this.onGuestDataChanged} 
                     onModalStateChanged={this.onModalStateChanged}
+                    onSearch={this.onSearch}
                 />
             </nav>
         )

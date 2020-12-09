@@ -42,18 +42,20 @@ class MenuModal extends Component {
             })
             this.setState((state, props) => ({
                 guestCount : state.adultCount + state.childrenCount
-            }))
-            console.log('total '+ this.state.guestCount);
-            this.props.onGuestData(this.state.guestCount)
+            }), () => {
+                console.log('total '+ this.state.guestCount);
+                this.props.onGuestData(this.state.guestCount)
+            })
         }else{
             this.setState({
                 childrenCount : data
             })
             this.setState((state, props) => ({
                 guestCount : state.adultCount + state.childrenCount
-            }))
-            console.log('total '+ this.state.guestCount);
-            this.props.onGuestData(this.state.guestCount)
+            }), () => {
+                console.log('total '+ this.state.guestCount);
+                this.props.onGuestData(this.state.guestCount)
+            })
         }
     }
 
@@ -61,24 +63,38 @@ class MenuModal extends Component {
         this.setState({
             location : city,
             locationId : id
+        }, () => {
+            this.props.onLocation(city)
         })
-        this.props.onLocation(city)
     }
 
     onModalClosing = (e) => {
         const modal = document.querySelector('#modalContent')
         if(e.target === modal){
-            e.target.firstChild.classList.toggle(styles.modalOut)
-            setTimeout(() => {
-                e.target.firstChild.classList.toggle(styles.modalOut)
-            }, 500);
-            setTimeout(() => {
-                this.setState((state, props) => ({
-                    isShowing : state.isShowing ? (false) : (true)
-                }))
-                this.props.onModalStateChanged(this.state.isShowing);
-            }, 450);
+            this.closeModal(e.target);
         }
+    }
+
+    closeModal(target){
+        target.firstChild.classList.toggle(styles.modalOut)
+        setTimeout(() => {
+            target.firstChild.classList.toggle(styles.modalOut)
+        }, 500);
+        setTimeout(() => {
+            this.setState((state, props) => ({
+                isShowing : state.isShowing ? (false) : (true)
+            }), () => {
+                this.props.onModalStateChanged(this.state.isShowing);
+            })
+        }, 450);
+    }
+
+    onSearch = (e) => {
+        const modal = document.querySelector('#modalContent');
+        this.closeModal(modal);
+        const location = this.state.location;
+        const count = this.state.guestCount;
+        this.props.onSearch(location, count);
     }
 
     render() {
@@ -102,7 +118,7 @@ class MenuModal extends Component {
                         )}
                     </div>
                     <div className={styles.modalBlockTwo}>
-                        <button className={styles.btnSearch}>
+                        <button className={styles.btnSearch} onClick={this.onSearch}>
                             <span className='material-icons' style={{fontSize : 18}}>search</span>
                             <span style={{fontSize : 14}}>Search</span>
                         </button>

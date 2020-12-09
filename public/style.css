@@ -24,6 +24,12 @@ body{
     }
 }
 
+.global{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .staybar{
     display: flex;
     justify-content: space-between;
@@ -49,4 +55,14 @@ body{
     font-weight: 400;
     font-size: 14px;
     color: var(--gray1);
+}
+
+/*footer*/
+.footer{
+    display: flex;
+    justify-content: center;
+    padding:25px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--gray2);
 }

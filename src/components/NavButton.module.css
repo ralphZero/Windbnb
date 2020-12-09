@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.btnSearch:focus{
+    outline: none;
+}
+
 .btnSearch:hover{
     background-color: #EB5757;
 }

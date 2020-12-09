@@ -7,6 +7,10 @@ const NavButton = ({location, guestCount, onSearch, onOpen}) => {
         onOpen(type);
     }
 
+    function onQuerySearch(e) {
+        onSearch(location, guestCount)
+    }
+
     const guest = guestCount === 0 ? ('Add guest') : (guestCount === 1 ? (guestCount+' guest') : (guestCount+' guests'));
     const guestColor = guestCount === 0 ? ({color : '#bdbdbd'}) : null
     const place = location ? (location) : ('Add location');
@@ -16,7 +20,7 @@ const NavButton = ({location, guestCount, onSearch, onOpen}) => {
         <div className={styles.container}>
             <span data-key='city' onClick={(e) => handleModalOpen(e)} className={styles.input+' '+styles.inputCity} style={locationColor}>{place}</span>
             <span data-key='guest' onClick={(e) => handleModalOpen(e)} className={styles.input+' '+styles.inputGuest} style={guestColor}>{guest}</span>
-            <button className={styles.btnSearch}>
+            <button className={styles.btnSearch} onClick={(e) => {onQuerySearch(e)}}>
                 <span className={'material-icons '+styles.icon}>search</span>
             </button>
         </div>

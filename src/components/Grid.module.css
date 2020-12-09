@@ -31,6 +31,7 @@
     padding: 0;
     overflow: hidden;
     border-radius: 24px;
+    transition: transform 0.3s ease;
 }
 
 .stay_img{
@@ -38,6 +39,20 @@
     height: 100%;
     border-radius: 24px;
     object-fit: cover;
+
+    transform-origin: 50% 65% 23%;
+    transition: transform .5s, filter .3s ease-in-out;
+    filter: brightness(100%);
+}
+
+.stay_img_wrapper:hover{
+    transform: scale(1.03);
+}
+
+.stay_img_wrapper:hover .stay_img{
+    filter: brightness(80%);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .stay_info{
