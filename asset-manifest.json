@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Windbnb/static/css/main.0379bedc.chunk.css",
+    "main.js": "/Windbnb/static/js/main.609a1c88.chunk.js",
+    "main.js.map": "/Windbnb/static/js/main.609a1c88.chunk.js.map",
+    "runtime-main.js": "/Windbnb/static/js/runtime-main.2c11ef59.js",
+    "runtime-main.js.map": "/Windbnb/static/js/runtime-main.2c11ef59.js.map",
+    "static/js/2.0be15f09.chunk.js": "/Windbnb/static/js/2.0be15f09.chunk.js",
+    "static/js/2.0be15f09.chunk.js.map": "/Windbnb/static/js/2.0be15f09.chunk.js.map",
+    "static/js/3.514addd2.chunk.js": "/Windbnb/static/js/3.514addd2.chunk.js",
+    "static/js/3.514addd2.chunk.js.map": "/Windbnb/static/js/3.514addd2.chunk.js.map",
+    "index.html": "/Windbnb/index.html",
+    "static/css/main.0379bedc.chunk.css.map": "/Windbnb/static/css/main.0379bedc.chunk.css.map",
+    "static/js/2.0be15f09.chunk.js.LICENSE.txt": "/Windbnb/static/js/2.0be15f09.chunk.js.LICENSE.txt",
+    "static/media/logo.beef9462.svg": "/Windbnb/static/media/logo.beef9462.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c11ef59.js",
+    "static/js/2.0be15f09.chunk.js",
+    "static/css/main.0379bedc.chunk.css",
+    "static/js/main.609a1c88.chunk.js"
+  ]
+}
